@@ -91,7 +91,12 @@ onetime(gPop,'click',handler);
 //Eventlistner Add TODOS
 btn.addEventListener('click',e =>{
    e.preventDefault();
-   generateTemp(addForm.add.value);
+   if (addForm.add.value == ''){
+      alert('You must write something');
+   } else{
+      generateTemp(addForm.add.value);
+   }
+   addForm.add.value = '';
 });
 /************* Fin Adding TO DO**************/
 //  generateTemp(addForm.add.value);
@@ -102,12 +107,12 @@ btn.addEventListener('click',e =>{
 list.addEventListener('click',e =>{
 
    if(e.target.classList.contains("delete")){
-      const closing = e.target;
-      const elementlist = closing.parentNode;
-      list.removeChild(elementlist);
+          confirm("voulez-vous vraiment supprimer?");
+          const closing = e.target;
+          const elementlist = closing.parentNode;
+          list.removeChild(elementlist);
    }
 });
-
 
 
 
