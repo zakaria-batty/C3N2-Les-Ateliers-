@@ -130,33 +130,15 @@ list.addEventListener('click',e =>{
  
 
 
-// search.addEventListener('keyup', () =>{
-//    //get value of input
-//   const search_value = search.value.toUpperCase();
-//   // get names ul
-//   let ul = document.getElementById('names');
-//   // get lis from ul
-//   let li = ul.querySelectorAll('li.list-group-item');
-//   //loop through list-group-item lis
-//   for(let i = 0; i<li.length; i++){
-//     let span = li[i].getElementsByTagName('span')[0];
-//     //if matched
-//     if(span.innerHTML.toUpperCase().indexOf(search_value) > -1){
-//       li[i].style.display = '';
-//     }else{
-//       li[i].style.display = 'none';
-//     }
-//   }
-// })
 const retrieve = (term) =>{
    //function pour faire un filtre i
    let items = [];
- for ( const element of list.children){
-    const item = element.innerText;
-    if (item.includes(term)){
-        items.push(item);
-    }
-
+   for ( const element of list.children){
+      const item = element.innerText;
+      if (item.includes(term)){
+         items.push(item);
+      }
+      
    }
    console.table(items);
    console.log(list.children);
@@ -165,10 +147,11 @@ const retrieve = (term) =>{
 
 //evenement de recherche des mots clés 
 search.addEventListener('keyup', () =>{
+   //get value of input
    const search_value = search.value;
-   retrieve(search_value);
-
-})
+      retrieve(search_value);
+     
+});
 
 
 
